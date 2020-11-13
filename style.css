@@ -25,15 +25,7 @@ body{
     
 }
 .show{
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-family: 'Segoe UI Semibold';
-    font-size: 18px;
-    color: black;
-    display: block;
-    justify-content: center;
-    align-items: center 
+    background-color: rgb(179, 4, 4);
+
       
 }

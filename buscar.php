@@ -8,7 +8,7 @@
     <title>Página Inicial</title>
 </head>
     <body>
-        <div class="header">Hotel blablabla</div>
+        <div class="header">Hotel</div>
             <nav class="navbar navbar-expand-md">
                 <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                     <ul class="navbar-nav mr-auto">
@@ -27,11 +27,14 @@
                         <input type="text" placeholder="Insira seu CPF" name="cpfb" required> <br> <br>
                         <input class="btn btn-success" type="submit" value="Buscar">
                         </form>
-                 </div>
-            </div>
+                </div>
+                <div class="show">
+
+                </div>
+            </div><br><br>
             <div class="show">
 
             </div>
-        <div class="footer"></div>
+                <div class="footer"></div>
     </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-    <div class="header">Hotel blablabla</div>
+    <div class="header">Hotel</div>
         <nav class="navbar navbar-expand-md">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
@@ -38,7 +38,7 @@
                     <h1>Cadastro Cliente</h1><br>
                     <p><small><b>Todos os itens marcados(*) são obrigatórios</b></small><p>
                     <p><small><b>No CPF e RG colocar somente números</b></small><p>
-                    <form method="POST" action="salvarCliente.php">
+                    <form method="POST" action="controller/salvarCliente.php">
                         <label>Nome Completo:* </label>
                             <input type="text" name="nome" placeholder="Digite seu nome completo" required> <br> <br>
                         <label>RG:* </label>

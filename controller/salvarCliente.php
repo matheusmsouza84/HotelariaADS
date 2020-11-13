@@ -1,5 +1,5 @@
 <?php
-    include_once "clsConexao.php";
+    include_once "../conexao/clsConexao.php";
 
     $nome = $_POST['nome'];
     $rg = $_POST['rg'];
@@ -11,7 +11,7 @@
     $sexo = $_POST['sexo'];
     $estadocivil = $_POST['estadocivil'];
 
-    $query = "INSERT INTO cliente (nome, rg, cpf, endereco, telefone, cep, datanasc, sexo, estadocivil) VALUES ('$nome', '$email', '$senha')";
+    $query = "INSERT INTO clientes (nome, rg, cpf, endereco, telefone, cep, datanasc, sexo, estadocivil) VALUES ('$nome', '$rg', '$cpf', '$endereco', '$telefone', '$cep', '$datanasc', '$sexo', '$estadocivil')";
     $result = Conexao::executar($query);
     header("Location: ../CadastrarCliente.php");
 ?>
