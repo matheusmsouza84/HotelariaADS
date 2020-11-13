@@ -52,8 +52,44 @@ $row_clientes = mysqli_fetch_assoc($result);
 			<label>Nome: </label>
 			<input type="text" name="nome" placeholder="Digite o nome completo" value="<?php echo $row_clientes['nome']; ?>"><br><br>
 			
-			<label>cpf: </label>
+			<label>RG: </label>
+			<input type="text" name="rg" placeholder="Digite o seu rg" value="<?php echo $row_clientes['rg']; ?>"><br><br>
+
+            <label>CPF: </label>
 			<input type="text" name="cpf" placeholder="Digite o seu cpf" value="<?php echo $row_clientes['cpf']; ?>"><br><br>
+
+            <label>endereço: </label>
+			<input type="text" name="endereco" placeholder="Digite o seu endereco" value="<?php echo $row_clientes['endereco']; ?>"><br><br>
+
+            <label>Telefone: </label>
+			<input type="text" name="telefone" placeholder="Digite o seu telefone" value="<?php echo $row_clientes['telefone']; ?>"><br><br>
+
+            <label>CEP: </label>
+			<input type="text" name="cep" placeholder="Digite o seu cep" value="<?php echo $row_clientes['cep']; ?>"><br><br>
+
+            <label>Data de nascimento: </label>
+			<input type="date" name="datanasc" placeholder="Digite o seu cpf" value="<?php echo $row_clientes['datanasc']; ?>"><br><br>
+
+            <label>Sexo:*</label>
+            <select name="sexo" id="sexoid" value="<?php echo $row_clientes['sexo']; ?>">
+                <option value=""> Selecione </option>
+                <option value="Masculino"> Masculino </option>
+                <option value="Feminino"> Feminino </option>
+            </select><br><br>
+            <label>Estado Civil:*</label>
+            <select name="estadocivil" id="estid" value="<?php echo $row_clientes['estadocivil']; ?>">
+                <option value=""> Selecione </option>
+                <option value="Casado"> Casado(a) </option>
+                <option value="Solteiro"> Solteiro(a) </option>
+                <option value="Viuvo"> Viúvo(a) </option>
+            </select><br><br>
+
+            <label>Status: </label>
+			<select name="Status" id="estid" value="<?php echo $row_clientes['status']; ?>">
+                <option value=""> Selecione </option>
+                <option value="0"> Inativar </option>
+                <option value="1"> Ativo </option>
+            </select><br><br>
 			
 			<input type="submit" value="Editar">
 		</form>

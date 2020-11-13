@@ -4,13 +4,30 @@ include_once "model/clsConexao.php";
 
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_EMAIL);
+$rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_STRING);
+$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
+$endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_STRING);
+$telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING);
+$cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_STRING);
+$datanasc = filter_input(INPUT_POST, 'datanasc', FILTER_SANITIZE_STRING);
+$sexo = filter_input(INPUT_POST, 'sexo', FILTER_SANITIZE_STRING);
+$estadocivil = filter_input(INPUT_POST, 'estadocivil', FILTER_SANITIZE_STRING);
+$status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_NUMBER_INT);
+
 
 echo "Nome: $nome <br>";
-echo "cpf: $cpf <br>";
+echo "RG: $rg <br>";
+echo "CPF: $cpf <br>";
+echo "endereco: $endereco <br>";
+echo "Telefone: $telefone <br>";
+echo "CEP: $cep <br>";
+echo "Data de Nascimento: $datanasc <br>";
+echo "Sexo: $sexo <br>";
+echo "Estado Civil: $estadocivil <br>";
+echo "Status: $status <br>";
 
 
-$query = "UPDATE clientes SET nome='$nome', cpf='$cpf', modified=NOW() WHERE id='$id'";
+$query = "UPDATE clientes SET nome='$nome', rg='$rg', cpf='$cpf', endereco='$endereco', telefone='$telefone', cep='$cep', datanasc='$datanasc', sexo='$sexo', estadocivil='$estadocivil', status='$status'  modified=NOW() WHERE id='$id'";
 $result = Conexao::consultar($query);
 
 
