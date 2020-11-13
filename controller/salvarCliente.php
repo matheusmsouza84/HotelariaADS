@@ -1,5 +1,5 @@
 <?php
-    include_once "../conexao/clsConexao.php";
+    include_once "../model/clsConexao.php";
 
     $nome = $_POST['nome'];
     $rg = $_POST['rg'];

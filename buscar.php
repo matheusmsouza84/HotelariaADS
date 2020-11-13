@@ -54,9 +54,9 @@ include_once "model/clsConexao.php";
 			$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
 			$query = "SELECT * FROM clientes WHERE cpf LIKE '%$cpf%'";
 			$result = Conexao::consultar($query);
-			while($row_usuario = mysqli_fetch_assoc($result)){	
-				echo "Nome: " . $row_usuario['nome'] . "<br>";
-				echo "<a href='edit_usuario.php?id=" . $row_usuario['id'] . "'>Editar</a><br>";
+			while($row_clientes = mysqli_fetch_assoc($result)){	
+				echo "Nome: " . $row_clientes['nome'] . "<br>";
+				echo "<a href='edit_usuario.php?id=" . $row_clientes['id'] . "'>Editar</a><br>";
 				
 			}
 		}
