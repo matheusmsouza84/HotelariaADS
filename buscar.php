@@ -50,7 +50,8 @@ include_once "model/clsConexao.php";
 			$query = "SELECT * FROM clientes WHERE cpf LIKE '%$cpf%'";
 			$result = Conexao::consultar($query);
 			while($row_clientes = mysqli_fetch_assoc($result)){	
-				echo "Nome: " . $row_clientes['nome'] . "<br>";
+                echo "Nome: " . $row_clientes['nome'] . "<br>";
+                echo "CPF: " . $row_clientes['cpf'] . "<br>";
 				echo "<a href='edit_usuario.php?id=" . $row_clientes['id'] . "'>Editar</a><br>";
 				
 			}

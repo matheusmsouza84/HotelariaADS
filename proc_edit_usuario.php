@@ -12,7 +12,7 @@ $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_STRING);
 $datanasc = filter_input(INPUT_POST, 'datanasc', FILTER_SANITIZE_STRING);
 $sexo = filter_input(INPUT_POST, 'sexo', FILTER_SANITIZE_STRING);
 $estadocivil = filter_input(INPUT_POST, 'estadocivil', FILTER_SANITIZE_STRING);
-$status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_NUMBER_INT);
+$statusc = filter_input(INPUT_POST, 'statusc', FILTER_SANITIZE_NUMBER_INT);
 
 
 echo "Nome: $nome <br>";
@@ -24,10 +24,10 @@ echo "CEP: $cep <br>";
 echo "Data de Nascimento: $datanasc <br>";
 echo "Sexo: $sexo <br>";
 echo "Estado Civil: $estadocivil <br>";
-echo "Status: $status <br>";
+echo "Status: $statusc <br>";
 
 
-$query = "UPDATE clientes SET nome='$nome', rg='$rg', cpf='$cpf', endereco='$endereco', telefone='$telefone', cep='$cep', datanasc='$datanasc', sexo='$sexo', estadocivil='$estadocivil', status='$status'  modified=NOW() WHERE id='$id'";
+$query = "UPDATE clientes SET nome='$nome', rg='$rg', cpf='$cpf', endereco='$endereco', telefone='$telefone', cep='$cep', datanasc='$datanasc', sexo='$sexo', estadocivil='$estadocivil', statusc='$statusc'  modified=NOW() WHERE id='$id'";
 $result = Conexao::consultar($query);
 
 

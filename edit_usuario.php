@@ -85,7 +85,7 @@ $row_clientes = mysqli_fetch_assoc($result);
             </select><br><br>
 
             <label>Status: </label>
-			<select name="Status" id="estid" value="<?php echo $row_clientes['status']; ?>">
+			<select name="statusc" id="estid" value="<?php echo $row_clientes['statusc']; ?>">
                 <option value=""> Selecione </option>
                 <option value="0"> Inativar </option>
                 <option value="1"> Ativo </option>
