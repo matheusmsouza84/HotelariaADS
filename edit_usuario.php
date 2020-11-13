@@ -23,7 +23,7 @@ $row_clientes = mysqli_fetch_assoc($result);
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                    <a href="CadastrarCliente.php">
+                    <a href="index.php">
                     <button class="btn btn-primary" type="button">Página Inicial</button>
                         </a>
                     </li>

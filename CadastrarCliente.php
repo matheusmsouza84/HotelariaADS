@@ -13,8 +13,8 @@
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                    <a href="buscar.php">
-                    <button class="btn btn-primary" type="button">Buscar Cadastro</button>
+                    <a href="index.php">
+                    <button class="btn btn-primary" type="button">Páginal Inicial</button>
                         </a>
                     </li>
                 </ul>
