@@ -71,13 +71,13 @@ $row_clientes = mysqli_fetch_assoc($result);
 			<input type="date" name="datanasc" placeholder="Digite o seu cpf" value="<?php echo $row_clientes['datanasc']; ?>"><br><br>
 
             <label>Sexo:*</label>
-            <select name="sexo" id="sexoid" value="<?php echo $row_clientes['sexo']; ?>">
+            <select name="sexo" id="sexoid" required value="<?php echo $row_clientes['sexo']; ?>">
                 <option value=""> Selecione </option>
                 <option value="Masculino"> Masculino </option>
                 <option value="Feminino"> Feminino </option>
             </select><br><br>
             <label>Estado Civil:*</label>
-            <select name="estadocivil" id="estid" value="<?php echo $row_clientes['estadocivil']; ?>">
+            <select name="estadocivil" id="estid" required value="<?php echo $row_clientes['estadocivil']; ?>">
                 <option value=""> Selecione </option>
                 <option value="Casado"> Casado(a) </option>
                 <option value="Solteiro"> Solteiro(a) </option>
@@ -85,7 +85,7 @@ $row_clientes = mysqli_fetch_assoc($result);
             </select><br><br>
 
             <label>Status: </label>
-			<select name="statusc" id="estid" value="<?php echo $row_clientes['statusc']; ?>">
+			<select name="statusc" id="estid" required value="<?php echo $row_clientes['statusc']; ?>">
                 <option value=""> Selecione </option>
                 <option value="0"> Inativar </option>
                 <option value="1"> Ativo </option>
