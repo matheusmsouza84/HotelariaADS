@@ -10,92 +10,105 @@ $row_clientes = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="utf-8">
-    <title> Editar </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<title> Editar </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="estilo/form.css">
+	<link rel="stylesheet" type="text/css" href="estilo/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
-    <body>
-    <div class="header">Hotel</div>
-        <nav class="navbar navbar-expand-md">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    <a href="index.php">
-                    <button class="btn btn-primary" type="button">Página Inicial</button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                     </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="content"><br><br><br><br><br><br><br>
-                <div class="shadow-lg bg-white" id="divcadastro">
 
-		<h1>Editar Usuário</h1>
-		<?php
-		if(isset($_SESSION['msg'])){
-			echo $_SESSION['msg'];
-			unset($_SESSION['msg']);
-		}
-		?>
-		<form method="POST" action="proc_edit_usuario.php">
-			<input type="hidden" name="id" value="<?php echo $row_clientes['id']; ?>">
-			
-			<label>Nome: </label>
-			<input type="text" name="nome" placeholder="Digite o nome completo" value="<?php echo $row_clientes['nome']; ?>"><br><br>
-			
-			<label>RG: </label>
-			<input type="text" name="rg" placeholder="Digite o seu rg" value="<?php echo $row_clientes['rg']; ?>"><br><br>
+<body>
+	<?php include 'modulos/header.php' ?>
+	<div class="container">
+		<div class="center">
+			<div class="title">Editar Cliente<span>*</span></div>
+			<form class="needs-validation" method="POST" action="proc_edit_usuario.php" novalidate>
+				<div class="form-row ">
+					<div class="col">
+						<input type="hidden" name="id" value="<?php echo $row_clientes['id']; ?>">
+						<input type="text" name="nome" class="form-control" value="<?php echo $row_clientes['nome']; ?>" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row ">
+					<div class="col">
+						<input type="text" class="form-control" id="rg" placeholder="RG" value="<?php echo $row_clientes['rg']; ?>" name="rg" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<input type="text" class="form-control" id="cpf" placeholder="CPF" value="<?php echo $row_clientes['cpf']; ?>" name="cpf" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<input type="text" class="form-control" id="cep" placeholder="CEP" value="<?php echo $row_clientes['cep']; ?>" name="cep" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<input type="text" class="form-control" id="endereco" placeholder="Endereço" value="<?php echo $row_clientes['endereco']; ?>" name="endereco" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<input type="text" class="form-control" id="telefone" placeholder="Telefone" value="<?php echo $row_clientes['telefone']; ?>" name="telefone" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<input type="text" class="form-control" id="datanasc" placeholder="Data de nascimento" value="<?php echo $row_clientes['datanasc']; ?>" name="datanasc" required>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<select class="custom-select custom-select-sm" name="sexo" id="sexoid" required>
+							<option selected disabled>Sexo</option>
+							<option value="Masculino"> Masculino </option>
+							<option value="Feminino"> Feminino </option>
+						</select>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<select class="custom-select custom-select-sm" name="estadocivil" id="estid" required>
+							<option selected disabled>Estado Civil</option>
+							<option value="Casado"> Casado(a) </option>
+							<option value="Solteiro"> Solteiro(a) </option>
+							<option value="Viuvo"> Viúvo(a) </option>
+						</select>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row" id="bt">
+					<div class="col" id="col-bt">
 
-            <label>CPF: </label>
-			<input type="text" name="cpf" placeholder="Digite o seu cpf" value="<?php echo $row_clientes['cpf']; ?>"><br><br>
+						<input type="submit" value="Salvar" class="btn btn-outline-info" onclick="enviaDados()">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
-            <label>endereço: </label>
-			<input type="text" name="endereco" placeholder="Digite o seu endereco" value="<?php echo $row_clientes['endereco']; ?>"><br><br>
+</body>
 
-            <label>Telefone: </label>
-			<input type="text" name="telefone" placeholder="Digite o seu telefone" value="<?php echo $row_clientes['telefone']; ?>"><br><br>
-
-            <label>CEP: </label>
-			<input type="text" name="cep" placeholder="Digite o seu cep" value="<?php echo $row_clientes['cep']; ?>"><br><br>
-
-            <label>Data de nascimento: </label>
-			<input type="date" name="datanasc" placeholder="Digite o seu cpf" value="<?php echo $row_clientes['datanasc']; ?>"><br><br>
-
-            <label>Sexo:*</label>
-            <select name="sexo" id="sexoid" required value="<?php echo $row_clientes['sexo']; ?>">
-                <option value=""> Selecione </option>
-                <option value="Masculino"> Masculino </option>
-                <option value="Feminino"> Feminino </option>
-            </select><br><br>
-            <label>Estado Civil:*</label>
-            <select name="estadocivil" id="estid" required value="<?php echo $row_clientes['estadocivil']; ?>">
-                <option value=""> Selecione </option>
-                <option value="Casado"> Casado(a) </option>
-                <option value="Solteiro"> Solteiro(a) </option>
-                <option value="Viuvo"> Viúvo(a) </option>
-            </select><br><br>
-
-            <label>Status: </label>
-			<select name="statusc" id="estid" required value="<?php echo $row_clientes['statusc']; ?>">
-                <option value=""> Selecione </option>
-                <option value="0"> Inativar </option>
-                <option value="1"> Ativo </option>
-            </select><br><br>
-			
-			<input type="submit" value="Editar">
-		</form>
-		
-		
-        </div>
-    <div class="footer"></div>
-    </body>
 </html>
