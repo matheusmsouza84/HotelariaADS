@@ -1,40 +1,34 @@
+<?php 
+    session_start();
+    
+    if( isset($_REQUEST['erro']) ){
+    echo "<script> alert('Usuário ou Senha não cadastrado'); </script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title> Cadastrar Cliente </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Estilo/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Página Inicial</title>
 </head>
-<body>
-    <div class="header">Hotel</div>
-        <nav class="navbar navbar-expand-md">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    <a href="CadastrarCliente.php">
-                    <button class="btn btn-primary" type="button">CadastrarCliente</button>
-                        </a><br><br>
-                    <a href="buscar.php">
-                        <button class="btn btn-primary" type="button">Buscar Cadastro</button>
-                    </a><br><br>
-                    <a href="export.php">
-                        <button class="btn btn-primary" type="button">Exportar arquivos</button>
-                    </a><br><br>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                     </li>
-                </ul>
-            </div>
-        </nav>
-            <div class="content">
-
-            </div>
-
-</body>
+    <body>
+        <div class="container-fluid">
+            <div class="row">              
+                <div class="col-12 col-md-8 color-left"></div>
+                    <div class="col-6 col-md-4  login">  
+                        <h4 class="acesso"><b>Acessar sistema Hotel</b></h4>
+                        <form method="POST" id="formlogin" action="controller/login.php" >
+                            <input type="email" placeholder="E-mail" name="email" required> 
+                            <input type="password" placeholder="Senha" name="senha" required> 
+                            <input class="btn btn-success" type="submit" value="Login"> 
+                            <a href="cadastrar.php" class="cad"><strong> Cadastre-se aqui! </strong></a>
+                        </form> 
+                </div>
+              </div>
+          </div>
+        </div>
+    </body>
 </html>
