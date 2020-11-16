@@ -5,60 +5,54 @@ include_once "model/clsConexao.php";
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="utf-8">
-    <title> Cadastro </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<title> Cadastro </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="estilo/style.css">
+	<link rel="stylesheet" type="text/css" href="estilo/form.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
-    <body>
-    <div class="header">Hotel</div>
-        <nav class="navbar navbar-expand-md">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    <a href="index.php">
-                    <button class="btn btn-primary" type="button">Página Inicial</button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                     </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="content"><br><br><br><br><br><br><br>
-                <div class="shadow-lg bg-white" id="divcadastro">
-		
-		<h1>Pesquisar Usuário</h1>
-		
-		<form method="POST" action="">
-			<label>CPF: </label>
-			<input type="text" name="cpf" placeholder="Digite o cpf" required><br><br>
-			
-			<input name="SendPesqUser" type="submit" value="Pesquisar">
-		</form><br><br>
-		
-		<?php
-		$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
-		if($SendPesqUser){
-			$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
-			$query = "SELECT * FROM clientes WHERE cpf LIKE '%$cpf%'";
-			$result = Conexao::consultar($query);
-			while($row_clientes = mysqli_fetch_assoc($result)){	
-                echo "Nome: " . $row_clientes['nome'] . "<br>";
-                echo "CPF: " . $row_clientes['cpf'] . "<br>";
-				echo "<a href='edit_usuario.php?id=" . $row_clientes['id'] . "'>Editar</a><br>";
-				
-			}
-		}
-		?>
-                </div>
-        </div>
-    <div class="footer"></div>
-    </body>
+
+<body>
+	<?php include 'modulos/header.php' ?>
+	<div class="container">
+		<div class="center">
+			<div class="title">Pesquisar Usuário<span>*</span></div>
+			<form class="needs-validation" method="POST" action="" novalidate>
+				<div class="form-row ">
+					<div class="col">
+						<input type="text" name="cpf" placeholder="Digite o cpf" class="form-control" required>
+						<div class="col" id="col-bt">
+							<input type="submit" value="Pesquisar" class="btn btn-outline-info" name="SendPesqUser">
+						</div>
+
+					</div>
+				</div>
+				<?php		
+							$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+							if($SendPesqUser){
+									$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
+									$query = "SELECT * FROM clientes WHERE cpf LIKE '%$cpf%'";
+									$result = Conexao::consultar($query);
+									while($row_clientes = mysqli_fetch_assoc($result)){	
+										echo '<div class="busca">Nome: '
+										. $row_clientes['nome']. 
+										'<a class="btn btn-warning" href= edit_usuario.php?id="' . $row_clientes['id'] .' ">Editar</a>							
+											</div>';	
+												
+							}
+						}
+					?>
+
+			</form>
+			<!--fecha form-->
+
+		</div>
+		<!--fecha center-->
+	</div>
+	<!--fecha container-->
+</body>
+
 </html>
