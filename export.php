@@ -7,7 +7,7 @@ include_once "model/clsConexao.php";
     
     $str = "";
     while ($row_cliente = mysqli_fetch_assoc($result)){
-        $str .= implode(',', $row_cliente) .','. PHP_EOL;
+        $str .= implode(';', $row_cliente) .';'. PHP_EOL;
     }
     
     file_put_contents('dados.csv', $str);

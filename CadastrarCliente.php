@@ -13,7 +13,7 @@
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                    <a href="index.php">
+                    <a href="dashboard.php">
                     <button class="btn btn-primary" type="button">Páginal Inicial</button>
                         </a>
                     </li>

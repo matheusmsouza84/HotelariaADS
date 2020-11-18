@@ -26,6 +26,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 		<div class="center">
 			<div class="title">Editar Cliente<span>*</span></div>
 			<form class="needs-validation" method="POST" action="proc_edit_usuario.php" novalidate>
+				<small>Marcar os campos sexo, estado civil e status</small>
 				<div class="form-row ">
 					<div class="col">
 						<input type="hidden" name="id" value="<?php echo $row_clientes['id']; ?>">
@@ -78,7 +79,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 				</div>
 				<div class="form-row">
 					<div class="col">
-						<select class="custom-select custom-select-sm" name="sexo" id="sexoid" required>
+						<select class="custom-select custom-select-sm" name="sexo" id="sexoid">
 							<option selected disabled>Sexo</option>
 							<option value="Masculino"> Masculino </option>
 							<option value="Feminino"> Feminino </option>
@@ -89,11 +90,22 @@ $row_clientes = mysqli_fetch_assoc($result);
 				</div>
 				<div class="form-row">
 					<div class="col">
-						<select class="custom-select custom-select-sm" name="estadocivil" id="estid" required>
+						<select class="custom-select custom-select-sm" name="estadocivil" id="estid">
 							<option selected disabled>Estado Civil</option>
 							<option value="Casado"> Casado(a) </option>
 							<option value="Solteiro"> Solteiro(a) </option>
 							<option value="Viuvo"> Viúvo(a) </option>
+						</select>
+						<div class="valid-feedback">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<select class="custom-select custom-select-sm" name="statusc" id="stat">
+							<option selected disabled>Status</option>
+							<option value="1"> Ativo </option>
+							<option value="0"> Inativo </option>
 						</select>
 						<div class="valid-feedback">
 						</div>

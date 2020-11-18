@@ -39,7 +39,7 @@ session_start();
                         <h5 class="card-title">Procurar Cliente</h5>
                         <hr class="my-4">
                         <p class="card-text">Busque por pelo <b>CPF</b> para localizar o cliente</p>
-                        <a href="pesquisar.php"><button type="button" class="color btn btn-secondary ">Buscar</button></a>
+                        <a href="buscar.php"><button type="button" class="color btn btn-secondary ">Buscar</button></a>
                     </div>
                 </div>
             </div>
