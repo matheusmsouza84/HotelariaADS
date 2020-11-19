@@ -1,76 +1,121 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <title> Cadastrar Cliente </title>
+    <meta charset="utf-8">
+    <title> Cadastro </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo/form.css">
+    <link rel="stylesheet" type="text/css" href="estilo/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="./JS/jquery.js"></script>
 </head>
+
 <body>
-    <div class="header">Hotel</div>
-        <nav class="navbar navbar-expand-md">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    <a href="dashboard.php">
-                    <button class="btn btn-primary" type="button">Páginal Inicial</button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                     </li>
-                </ul>
-            </div>
-        </nav>
-            <div class="content">
-            <style>
-                input[type=number]::-webkit-inner-spin-button,
-                input[type=number]::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-                }
-            </style>
-                <div class="shadow-lg bg-white" id="divcadastro">
-                    <h1>Cadastro Cliente</h1><br>
-                    <p><small><b>Todos os itens marcados(*) são obrigatórios</b></small><p>
-                    <p><small><b>No CPF e RG colocar somente números</b></small><p>
-                    <form method="POST" action="controller/salvarCliente.php">
-                        <label>Nome Completo:* </label>
-                            <input type="text" name="nome" placeholder="Digite seu nome completo" required> <br> <br>
-                        <label>RG:* </label>
-                            <input type="number" name="rg" placeholder="Digite seu RG" required> <br> <br>
-                        <label>CPF:* </label>
-                            <input type="number" name="cpf" placeholder="Digite seu CPF" required> <br> <br>
-                        <label>Endereço:* </label>
-                            <input type="text" name="endereco" placeholder="Digite seu endereço" required> <br> <br>
-                        <label>telefone:* </label>
-                            <input type="number" name="telefone" placeholder="Ex: 51987654321" required> <br> <br>
-                        <label>CEP:* </label>
-                            <input type="number" name="cep" placeholder="Digite seu CEP" required> <br> <br>
-                        <label>Data de nascimento:* </label>
-                            <input type="date" name="datanasc"required> <br> <br>
-                        <label>Sexo:*</label>
-                                <select name="sexo" id="sexoid" required>
-                                    <option value=""> Selecione </option>
-                                    <option value="Masculino"> Masculino </option>
-                                    <option value="Feminino"> Feminino </option>
-                                </select><br><br>
-                            <label>Estado Civil:*</label>
-                                <select name="estadocivil" id="estid" required>
-                                    <option value=""> Selecione </option>
-                                    <option value="Casado"> Casado(a) </option>
-                                    <option value="Solteiro"> Solteiro(a) </option>
-                                    <option value="Viuvo"> Viúvo(a) </option>
-                                </select><br><br>
-                        <input class="btn btn-primary" type="submit" value="Cadastrar"> <br>
+<?php include 'modulos/header.php';
+    if(isset($_SESSION['msg'])){
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+    }
+?>
+    <div class="container">
+        <div class="center">
+            <div class="title">Cadastro Cliente<span>*</span></div>
+            <form class="needs-validation" method="POST" action="controller/salvarcliente.php" novalidate>
+                <div class="form-row ">
+                    <div class="col">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo" name="nome" required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row ">
+                    <div class="col">
+                        <input type="text" class="form-control" id="rg" placeholder="RG" name="rg"
+                            required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf" required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="cep" placeholder="CEP" name="cep" required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="endereco" placeholder="Endereço"
+                            name="endereco" required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" name="telefone"
+                            required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="datanasc" placeholder="Data de nascimento" name="datanasc"
+                                required>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <select class="custom-select custom-select-sm" name="sexo" id="sexoid" required>
+                                <option selected disabled>Sexo</option>
+                                <option value="Masculino"> Masculino </option>
+                                <option value="Feminino"> Feminino </option>
+                              </select>    
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <select class="custom-select custom-select-sm"  name="estadocivil" id="estid" required >
+                                <option  selected disabled>Estado Civil</option>
+                                <option value="Casado"> Casado(a) </option>
+                                <option value="Solteiro"> Solteiro(a) </option>
+                                <option value="Viuvo"> Viúvo(a) </option>
+                              </select>    
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                    </div>
+                          <div class="form-row" id="bt">
+                            <div class="col" id="col-bt">
+                                
+                                <input type="submit" value="Cadastrar" class="btn btn-outline-info"onclick="enviaDados()">
+                            </div>
+                        </div>
                     </form>
-                    <br>
                 </div>
             </div>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 
+    <script src="./JS/validationForm.js"></script>
 </body>
+
 </html>
