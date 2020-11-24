@@ -79,7 +79,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 				</div>
 				<div class="form-row">
 					<div class="col">
-						<select class="custom-select custom-select-sm" name="sexo" id="sexoid">
+						<select class="custom-select custom-select-sm" name="sexo" id="sexoid"required>
 							<option selected disabled>Sexo</option>
 							<option value="Masculino"> Masculino </option>
 							<option value="Feminino"> Feminino </option>
@@ -90,7 +90,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 				</div>
 				<div class="form-row">
 					<div class="col">
-						<select class="custom-select custom-select-sm" name="estadocivil" id="estid">
+						<select class="custom-select custom-select-sm" name="estadocivil" id="estid"required>
 							<option selected disabled>Estado Civil</option>
 							<option value="Casado"> Casado(a) </option>
 							<option value="Solteiro"> Solteiro(a) </option>
@@ -103,9 +103,8 @@ $row_clientes = mysqli_fetch_assoc($result);
 				<div class="form-row">
 					<div class="col">
 						<select class="custom-select custom-select-sm" name="statusc" id="stat">
-							<option selected disabled>Status</option>
-							<option value="1"> Ativo </option>
-							<option value="0"> Inativo </option>
+							<option value="1"> Conta Ativa </option>
+							<option value="0"> Inativar conta </option>
 						</select>
 						<div class="valid-feedback">
 						</div>

@@ -31,13 +31,6 @@ $query = "UPDATE clientes SET nome='$nome', rg='$rg', cpf='$cpf', endereco='$end
 $result = Conexao::executar($query);
 
 
-if(mysqli_affected_rows($conn)){
-	$_SESSION['msg'] = "<p style='color:green;'>Usuário editado com sucesso</p>";
-	header("Location: edit_usuario.php");
-}else{
-	$_SESSION['msg'] = "<p style='color:red;'>Usuário não foi editado com sucesso</p>";
-	header("Location: edit_usuario.php?id=$id");
-}
+
 ?>
 
-/*modified=NOW()*/
