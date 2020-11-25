@@ -30,19 +30,28 @@ include_once "model/clsConexao.php";
 
 					</div>
 				</div>
+				<?php
+
+				?>
 				<?php		
 							$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 							if($SendPesqUser){
 									$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
 									$query = "SELECT * FROM clientes WHERE cpf LIKE '%$cpf%'";
 									$result = Conexao::consultar($query);
-									while($row_clientes = mysqli_fetch_assoc($result)){	
-										echo '<div class="busca">Nome: '
-										. $row_clientes['nome']. 
-										'<a class="btn btn-warning" href= edit_usuario.php?id="' . $row_clientes['id'] .' ">Editar</a>							
-											</div>';	
-												
-							}
+									if($cpf == ""){
+										echo  "CPF Inválido";	
+									}
+									else{
+										while($row_clientes = mysqli_fetch_assoc($result)){	
+											echo '<div class="busca">Nome: '
+											. $row_clientes['nome']. 
+											'<a class="btn btn-warning" href= edit_usuario.php?id="' . $row_clientes['id'] .' ">Editar</a>							
+												</div>';
+										}
+									}	
+													
+							
 						}
 					?>
 

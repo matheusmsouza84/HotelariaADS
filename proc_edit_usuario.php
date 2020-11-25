@@ -15,16 +15,7 @@ $estadocivil = filter_input(INPUT_POST, 'estadocivil', FILTER_SANITIZE_STRING);
 $statusc = filter_input(INPUT_POST, 'statusc', FILTER_SANITIZE_NUMBER_INT);
 
 
-echo "Nome: $nome <br>";
-echo "RG: $rg <br>";
-echo "CPF: $cpf <br>";
-echo "endereco: $endereco <br>";
-echo "Telefone: $telefone <br>";
-echo "CEP: $cep <br>";
-echo "Data de Nascimento: $datanasc <br>";
-echo "Sexo: $sexo <br>";
-echo "Estado Civil: $estadocivil <br>";
-echo "Status: $statusc <br>";
+
 
 
 
@@ -32,14 +23,11 @@ $query = "UPDATE clientes SET nome='$nome', rg='$rg', cpf='$cpf', endereco='$end
 $result = Conexao::executar($query);
 
 
-if(mysqli_affected_rows($conn)){
-	$_SESSION['msg'] = "<p style='color:green;'>Usuário editado com sucesso</p>";
-	header("Location: edit_usuario.php");
+if($statusc == 1){
+	echo "<script>alert('Dados alterado com sucesso');location.href=\"buscar.php\";</script>";
 }else{
-	$_SESSION['msg'] = "<p style='color:red;'>Usuário não foi editado com sucesso</p>";
-	header("Location: edit_usuario.php?id=$id");
+	echo "<script>alert('Conta Inativada');location.href=\"buscar.php\";</script>";
+	
 }
 
 ?>
-
-/*modified=NOW()*/
