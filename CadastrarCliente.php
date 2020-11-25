@@ -83,7 +83,7 @@ session_start();
                     <div class="form-row">
                         <div class="col">
                             <select class="custom-select custom-select-sm" name="sexo" id="sexoid" required>
-                                <option selected disabled>Sexo</option>
+                                <option selected disabled value="">Sexo</option>
                                 <option value="Masculino"> Masculino </option>
                                 <option value="Feminino"> Feminino </option>
                               </select>    
@@ -94,7 +94,7 @@ session_start();
                     <div class="form-row">
                         <div class="col">
                             <select class="custom-select custom-select-sm"  name="estadocivil" id="estid" required >
-                                <option  selected disabled>Estado Civil</option>
+                                <option selected disabled value="">Estado Civil</option>
                                 <option value="Casado"> Casado(a) </option>
                                 <option value="Solteiro"> Solteiro(a) </option>
                                 <option value="Viuvo"> Viúvo(a) </option>
