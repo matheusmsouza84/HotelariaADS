@@ -17,6 +17,6 @@
 
             header("Location: ../dashboard.php");
         }else{
-            header(" Location: ../index.php?erro");
+            header("Location: ../index.php?erro");
         }
 ?>
