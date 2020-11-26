@@ -2,7 +2,9 @@
     session_start();
     
     if( isset($_REQUEST['erro']) ){
-    echo "<script> alert('Usuário ou Senha não cadastrado'); </script>";
+    echo '<div class="alert alert-danger" role="alert">
+    E-mail ou senha Incorreto
+    </div>';
     }
 ?>
 <!DOCTYPE html>

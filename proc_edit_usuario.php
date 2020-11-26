@@ -26,7 +26,7 @@ $result = Conexao::executar($query);
 if($statusc == 1){
 	echo "<script>alert('Dados alterado com sucesso');location.href=\"buscar.php\";</script>";
 }else{
-	echo "<script>alert('Conta Inativada');location.href=\"buscar.php\";</script>";
+	echo "<script>alert('Você inativou Sua Conta.');location.href=\"buscar.php\";</script>";
 	
 }
 

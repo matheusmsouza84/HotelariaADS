@@ -25,8 +25,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 	<div class="container">
 		<div class="center">
 			<div class="title">Editar Cliente<span>*</span></div>
-			<form class="needs-validation" method="POST" action="proc_edit_usuario.php" novalidate>
-				<small>Marcar os campos sexo, estado civil e status</small>
+			<form class="needs-validation" method="POST" action="proc_edit_usuario.php">
 				<div class="form-row ">
 					<div class="col">
 						<input type="hidden" name="id" value="<?php echo $row_clientes['id']; ?>">
@@ -80,7 +79,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 				<div class="form-row">
 					<div class="col">
 						<select class="custom-select custom-select-sm" name="sexo" id="sexoid"required>
-							<option selected disabled>Sexo</option>
+							<option selected disabled value="">Sexo</option>
 							<option value="Masculino"> Masculino </option>
 							<option value="Feminino"> Feminino </option>
 						</select>
@@ -91,7 +90,7 @@ $row_clientes = mysqli_fetch_assoc($result);
 				<div class="form-row">
 					<div class="col">
 						<select class="custom-select custom-select-sm" name="estadocivil" id="estid"required>
-							<option selected disabled>Estado Civil</option>
+							<option selected disabled value="">Estado Civil</option>
 							<option value="Casado"> Casado(a) </option>
 							<option value="Solteiro"> Solteiro(a) </option>
 							<option value="Viuvo"> Viúvo(a) </option>
@@ -119,7 +118,10 @@ $row_clientes = mysqli_fetch_assoc($result);
 			</form>
 		</div>
 	</div>
+	<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 
+    <script src="./JS/validationForm.js"></script>
 </body>
 
 </html>

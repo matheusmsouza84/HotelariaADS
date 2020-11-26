@@ -1,8 +1,6 @@
 <?php
 include_once "model/clsConexao.php";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,44 +18,41 @@ include_once "model/clsConexao.php";
 	<div class="container">
 		<div class="center">
 			<div class="title">Pesquisar Usuário<span>*</span></div>
-			<form class="needs-validation" method="POST" action="" novalidate>
+			<form class="needs-validation" method="POST" action="">
 				<div class="form-row ">
 					<div class="col">
-						<input type="text" name="cpf" placeholder="Digite o cpf" class="form-control" required>
+						<input type="text" name="cpf" placeholder="Digite o CPF" class="form-control" required>
 						<div class="col" id="col-bt">
-							<input type="submit" value="Pesquisar" class="btn btn-outline-info" name="SendPesqUser">
+							<input type="submit" value="Pesquisar" class="btn btn-outline-info" name="SendPesqUser" onclick="enviaDados()">
 						</div>
 
 					</div>
 				</div>
+				</form>
 				<?php
-
-				?>
-				<?php		
+									
+								
 							$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 							if($SendPesqUser){
 									$cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
 									$query = "SELECT * FROM clientes WHERE cpf LIKE '%$cpf%'";
 									$result = Conexao::consultar($query);
 									if($cpf == ""){
-										echo  "CPF Inválido";	
+										echo  '<div class="busca">CPF não registrado!!!</div>';	
 									}
+
 									else{
 										while($row_clientes = mysqli_fetch_assoc($result)){	
 											echo '<div class="busca">Nome: '
 											. $row_clientes['nome']. 
-											'<a class="btn btn-warning" href= edit_usuario.php?id="' . $row_clientes['id'] .' ">Editar</a>							
+											'<a class="btn btn-warning" href= edit_usuario.php?id=' . $row_clientes['id'] .' >Editar</a>							
 												</div>';
 										}
 									}	
 													
 							
 						}
-					?>
-
-			</form>
-			<!--fecha form-->
-
+				?>
 		</div>
 		<!--fecha center-->
 	</div>
@@ -65,3 +60,4 @@ include_once "model/clsConexao.php";
 </body>
 
 </html>
+

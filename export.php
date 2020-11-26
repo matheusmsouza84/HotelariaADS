@@ -21,6 +21,7 @@ include_once "model/clsConexao.php";
     header("Pragma: no-cache");
     header("Expires: 0");
     
+    
 echo $str;
 
 

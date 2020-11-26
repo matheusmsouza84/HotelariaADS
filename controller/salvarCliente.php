@@ -13,5 +13,7 @@
 
     $query = "INSERT INTO clientes (nome, rg, cpf, endereco, telefone, cep, datanasc, sexo, estadocivil) VALUES ('$nome', '$rg', '$cpf', '$endereco', '$telefone', '$cep', '$datanasc', '$sexo', '$estadocivil')";
     $result = Conexao::executar($query);
-    header("Location: ../CadastrarCliente.php");
+
+
+    header("Location: ../dashboard.php");
 ?>

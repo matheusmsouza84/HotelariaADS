@@ -14,7 +14,7 @@
     <div class="container">
         <div class="center">
             <div class="title">Cadastrar Usuário<span>*</span></div>
-            <form class="needs-validation" method="POST"  action="controller/salvarusuario.php" novalidate>
+            <form class="needs-validation" method="POST"  action="controller/salvarusuario.php">
                 <div class="form-row ">
                     <div class="col">
                         <input type="text" class="form-control" id="nome" placeholder="Nome completo" name="nome" required>
