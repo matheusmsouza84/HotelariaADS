@@ -27,7 +27,7 @@ session_start();
                         <h5 class="card-title">Casdastro de Cliente</h5>
                         <hr class="my-4">
                         <p class="card-text">Faça o cadastro de um novo cliente ao sistema</p>
-                        <a href="cadastrarcliente.php"> <button type="button" class=" color btn btn-primary ">Cadastrar</button></a>
+                        <a href="CadastrarCliente.php"> <button type="button" class=" color btn btn-primary ">Cadastrar</button></a>
                     </div>
                 </div>
             </div>
